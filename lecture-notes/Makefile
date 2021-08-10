@@ -1,7 +1,7 @@
 PANDOC=pandoc
 
-PANDOC_OPTIONS_MAIN=--standalone
-PANDOC_OPTIONS_CHAPTER=--top-level-division=chapter --listings --biblatex
+PANDOC_OPTIONS_MAIN=--standalone --biblatex --pdf-engine=latexmk --pdf-engine-opt=-lualatex
+PANDOC_OPTIONS_CHAPTER=--top-level-division=chapter --listings
 
 SRC=$(wildcard */*.md)
 
@@ -22,11 +22,11 @@ all: pdf
 
 # tex target builds all tex files in subdirectories and the main tex file
 tex: $(TEXFILES)
-	$(PANDOC) $(PANDOC_OPTIONS_MAIN) config.yml --template=$(TEMPLATE) --pdf-engine=lualatex --pdf-engine-opt=--shell-escape -o $(MAIN_FILE).tex
+	$(PANDOC) $(PANDOC_OPTIONS_MAIN) config.yml --template=$(TEMPLATE) -o $(MAIN_FILE).tex
 
 # odf target builds all tex files in subdirectories and the main pdf
 pdf: $(TEXFILES)
-	$(PANDOC) $(PANDOC_OPTIONS_MAIN) config.yml --template=$(TEMPLATE) --pdf-engine=lualatex --pdf-engine-opt=--shell-escape -o $(MAIN_FILE).pdf
+	$(PANDOC) $(PANDOC_OPTIONS_MAIN) config.yml --template=$(TEMPLATE) -o $(MAIN_FILE).pdf
 
 clean:
 	rm $(TEXFILES) $(MAIN_FILE).pdf $(MAIN_FILE).tex
