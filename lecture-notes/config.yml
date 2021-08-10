@@ -1,0 +1,22 @@
+---
+# General information
+authors:
+- Alexander Jaust
+- Benjamin Uekermann
+course_title: Simulation Software Engineering
+term: Winter 2021/22
+keywords:
+- research software engineering
+- documentation
+- testing
+- virtualization
+
+# Sections to use
+sections:
+- 02-virtualization-and-containers/chapter.tex
+
+# Other settings
+mainfont: XITS
+sansfont: Roboto
+monofont: Source Code Pro
+---
