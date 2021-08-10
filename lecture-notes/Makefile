@@ -1,7 +1,7 @@
 PANDOC=pandoc
 
 PANDOC_OPTIONS_MAIN=--standalone --biblatex --pdf-engine=latexmk --pdf-engine-opt=-lualatex
-PANDOC_OPTIONS_CHAPTER=--top-level-division=chapter --listings
+PANDOC_OPTIONS_CHAPTER=--top-level-division=chapter --listings --biblatex
 
 SRC=$(wildcard */*.md)
 

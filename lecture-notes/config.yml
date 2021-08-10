@@ -17,7 +17,10 @@ sections:
 - 02-virtualization-and-containers/chapter.tex
 
 # Bibliography
-bibliography: bibliography.bib
+# Several files can be specified via a list
+bibliography:
+- bibliography.bib
+- sample.bib
 
 # Appendix
 # appendix:
@@ -26,7 +29,8 @@ bibliography: bibliography.bib
 # Other settings
 wrap: off
 
-mainfont: XITS
-sansfont: Roboto
-monofont: Source Code Pro
+#mainfont: XITS
+#sansfont: Roboto #Roboto is the font from the homepage
+#sansfont: Source Sans Pro
+#monofont: Source Code Pro
 ---

@@ -1,4 +1,4 @@
-\documentclass[fontsize=9pt,
+\documentclass[fontsize=11pt,
                pagesize,
                DIV=calc,
                listof=totoc,
@@ -6,7 +6,7 @@
 %               draft
                ]{scrbook}
 
-\usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm,includeheadfoot]{geometry}
+\usepackage[a4paper,top=2cm,bottom=2cm,left=3.75cm,right=3.75cm,includeheadfoot]{geometry}
 
 \renewcommand{\baselinestretch}{1.2}
 
@@ -49,7 +49,9 @@ sorting=nty,
 date=year,
 %	abbreviate=true
 ]{biblatex}
+$for(bibliography)$
 \addbibresource{$bibliography$}
+$endfor$
 $endif$
 
 \usepackage[]{caption}
@@ -66,8 +68,8 @@ $endif$
 %\usepackage{scrpage2}
 
 \usepackage{fontspec}
-$if(sansfont)$
-\setmainfont[Mapping=tex-text]{$sansfont$}
+$if(mainfont)$
+\setmainfont[Mapping=tex-text]{$mainfont$}
 $endif$
 $if(sansfont)$
 \setsansfont[Mapping=tex-text]{$sansfont$}
