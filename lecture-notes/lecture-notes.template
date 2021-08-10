@@ -18,37 +18,39 @@
 %Include graphics
 \usepackage{graphicx}
 \usepackage[english]{babel}
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
 
 %\RequirePackage{fix-cm}
 %Marks to jump inside the PDF
 \usepackage{hyperref}
 \usepackage{csquotes}
 \usepackage{filecontents}
-%\usepackage[%
-%%defernumbers=true,
-%giveninits=true, %Vornamen abkuerzen
-%style=numeric-comp, %Labels mit Zahlen
-%backend=biber,
-%%	backref=true, % Shows on which page the source has been cited
-%clearlang=true, % Removes the language entry of all source from the bibliography
-%hyperref=true,
-%doi=false, %DOI nicht anzeigen
-%natbib=true, %natbib Stil
-%isbn=false, %ISBN nicht anzeigen
-%url=true, %URLs nicht anzeigen
-%eprint=true,
-%maxbibnames=20, %Max. 50 Namen pro Quelle
-%date=short, %Veroeffentlichungsdatum nur in Kurzform
-%%sortcites=false,
-%sortcites,
-%%sortlos=los,
-%%sorting=ydnt,
-%sorting=nty,
-%date=year,
-%%	abbreviate=true
-%]{biblatex}
-%\bibliography{bib/references}
+$if(bibliography)$
+\usepackage[%
+%defernumbers=true,
+giveninits=true, %Vornamen abkuerzen
+style=numeric-comp, %Labels mit Zahlen
+backend=biber,
+%	backref=true, % Shows on which page the source has been cited
+clearlang=true, % Removes the language entry of all source from the bibliography
+hyperref=true,
+doi=false, %DOI nicht anzeigen
+natbib=true, %natbib Stil
+isbn=false, %ISBN nicht anzeigen
+url=true, %URLs nicht anzeigen
+eprint=true,
+maxbibnames=20, %Max. 50 Namen pro Quelle
+date=short, %Veroeffentlichungsdatum nur in Kurzform
+%sortcites=false,
+sortcites,
+%sortlos=los,
+%sorting=ydnt,
+sorting=nty,
+date=year,
+%	abbreviate=true
+]{biblatex}
+\addbibresource{$bibliography$}
+$endif$
 
 \usepackage[]{caption}
 \usepackage{subcaption}
@@ -59,9 +61,9 @@
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \usepackage[table,dvipsnames]{xcolor}
 
-\usepackage{adjustbox}
-\usepackage{scalerel}
-\usepackage{scrpage2}
+%\usepackage{adjustbox}
+%\usepackage{scalerel}
+%\usepackage{scrpage2}
 
 \usepackage{fontspec}
 $if(sansfont)$
@@ -163,6 +165,9 @@ $for(sections)$
 \input{$sections$}
 $endfor$
 
+$if(bibliography)$
+\printbibliography
+$endif$
 
 % Appendix
 \appendix

@@ -13,9 +13,19 @@ keywords:
 
 # Sections to use
 sections:
+- 00-introduction/chapter.tex
 - 02-virtualization-and-containers/chapter.tex
 
+# Bibliography
+bibliography: bibliography.bib
+
+# Appendix
+# appendix:
+# - A01-appendix/chapter.tex
+
 # Other settings
+wrap: off
+
 mainfont: XITS
 sansfont: Roboto
 monofont: Source Code Pro
