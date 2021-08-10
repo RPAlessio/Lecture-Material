@@ -4,16 +4,21 @@ In this chapter we discuss virtual machines and containers and their potential u
 
 ## Virtual machines vs. containers
 
-abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz abcdefghijklmnopqrstuvwxyz
+- [Virtual Box](https://www.virtualbox.org/)
+- [Vagrant](https://www.vagrantup.com/)
 
-There is [^1]
+There is have been extensive discussions[^1] on what the differences between virtual machines, containers and their related tools are and when to use what.
 
-[^1]: [@vagrantvsdocker] https://stackoverflow.com/questions/16647069/should-i-use-vagrant-or-docker-for-creating-an-isolated-environment (Last checked on 2021-08-10)
+[^1]: An infamous discussion of the creators of vagrant and Docker about the respective tools can be found on Stackoverflow [@vagrantvsdocker]
 
 ## Virtual machines
 
 ## Containers
 
+- podman
+- [lxc/lxd](https://linuxcontainers.org/)
 
 
 The container technologies discussed here are not the only ones available, but not that common in science yet. We still want to mention the availability of Podman [@podman], lxc/lxd [@lxc] and
+
+

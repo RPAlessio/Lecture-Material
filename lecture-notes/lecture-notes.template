@@ -63,29 +63,46 @@ $endif$
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \usepackage[table,dvipsnames]{xcolor}
 
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
 %\usepackage{adjustbox}
 %\usepackage{scalerel}
 %\usepackage{scrpage2}
 
-\usepackage{fontspec}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+$if(euro)$
+  \usepackage{eurosym}
+$endif$
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
 $if(mainfont)$
-\setmainfont[Mapping=tex-text]{$mainfont$}
+    \setmainfont{$mainfont$}
 $endif$
 $if(sansfont)$
-\setsansfont[Mapping=tex-text]{$sansfont$}
+    \setsansfont{$sansfont$}
 $endif$
 $if(monofont)$
-\setmonofont[Mapping=tex-text]{$monofont$}
+    \setmonofont[Mapping=tex-ansi]{$monofont$}
 $endif$
-
-%\usepackage{fontspec}
-%\setmainfont[Mapping=tex-text]{XITS}
-%\setsansfont[Mapping=tex-text]{Ubuntu}
-%\setmainfont[Mapping=tex-text]{Vollkorn}
-%\setmainfont[Mapping=tex-text]{Linux Libertine}
-%\setmainfont[Mapping=tex-text]{Minion Pro}
-%\setsansfont[Mapping=tex-text]{Myriad Pro}
-%\setmonofont[Mapping=tex-text]{Source Code Pro}
+$if(mathfont)$
+    \setmathfont(Digits,Latin,Greek){$mathfont$}
+$endif$
+$if(CJKmainfont)$
+    \usepackage{xeCJK}
+    \setCJKmainfont[$CJKoptions$]{$CJKmainfont$}
+$endif$
 
 %Make it look nicer
 \usepackage{microtype}

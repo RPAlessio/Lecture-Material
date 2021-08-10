@@ -31,6 +31,6 @@ wrap: off
 
 #mainfont: XITS
 #sansfont: Roboto #Roboto is the font from the homepage
-#sansfont: Source Sans Pro
+sansfont: Source Sans Pro
 #monofont: Source Code Pro
 ---
