@@ -18,9 +18,7 @@
 %Include graphics
 \usepackage{graphicx}
 \usepackage[english]{babel}
-%\usepackage[utf8]{inputenc}
 
-%\RequirePackage{fix-cm}
 %Marks to jump inside the PDF
 \usepackage{hyperref}
 \usepackage{csquotes}
@@ -147,6 +145,15 @@ $endif$
 \definecolor{commentcolor}{rgb}{0.2, 0.5, 0.2}
 \definecolor{stringcolor}{rgb}{0.5, 0.5, 0.2}
 
+\lstdefinelanguage{Dockerfile}
+{
+  morekeywords={FROM, RUN, CMD, LABEL, MAINTAINER, EXPOSE, ENV, ADD, COPY,
+    ENTRYPOINT, VOLUME, USER, WORKDIR, ARG, ONBUILD, STOPSIGNAL, HEALTHCHECK,
+    SHELL},
+  morecomment=[l]{\#},
+  morestring=[b]"
+}
+
 \newcommand*{\todo}[1]{}
 
 \title{$course_title$}
@@ -188,7 +195,12 @@ $if(bibliography)$
 \printbibliography
 $endif$
 
+$if(appendix)$
 % Appendix
 \appendix
+$for(appendix)$
+\input{$appendix$}
+$endfor$
+$endif$
 
 \end{document}

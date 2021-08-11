@@ -12,6 +12,7 @@ keywords:
 - virtualization
 
 # Sections to use
+# The order in the list defines the order of the chapter to appear in the final document.
 sections:
 - 00-introduction/chapter.tex
 - 02-virtualization-and-containers/chapter.tex
@@ -20,7 +21,7 @@ sections:
 # Several files can be specified via a list
 bibliography:
 - bibliography.bib
-- sample.bib
+#- sample.bib
 
 # Appendix
 # appendix:
