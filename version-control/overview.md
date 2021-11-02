@@ -126,52 +126,47 @@ Starting remarks:
 - Students present in 3-5 mins their favorite *neat little Git trick* (a tool, a command, a configuration, a GitHub thing, ...).
 - Preparation should not take longer than 15 mins, should be a demo.
 - Lecturers also prepare some.
-- Examples Benjamin:
-  - `git blame` on GitHub
-  - `git reflog`
-  - [gitignore templates](https://github.com/github/gitignore)
-  - [GitExplorer](https://gitexplorer.com/)
-- More examples:
-  - GitHub CLI
-  - [GitKraken](https://www.gitkraken.com/)
-- Collect links via PRs
 
-Remarks:
+Collected examples:
 
-- Only use a GUI once you understand command-line Git.
-
-## Working in teams / git workflows
-
-| Duration | Format | Material |
-| --- | --- | --- |
-| 15 minutes | slides | TODO |
+- Click on line number on GitHub and then `blame` to study history of file
+- `git reflog` to resurrect accidentally deleted branches
+- GitHub uses [gitignore templates](https://github.com/github/gitignore) if you create a `.gitignore` file from GitHub
+- [GitExplorer](https://gitexplorer.com/): a nice way to generate important git command
+- Shortcut `t` to search project files on GitHub
+- Shortcut `ctrl` + `k` to never use mouse on GitHub again
+- `git effort` (from `git-extras`repository): Show effort statistics on file(s) in repository
+- `git commit -m "Title of commit" -d "Description of commit` to specify a commit message and description without going to vim
+- Use [aheadfork](https://github.com/mbomb007/aheadfork) to find GitHub forks that are ahead
+- Use [permanent links](https://docs.github.com/en/github/writing-on-github/working-with-advanced-formatting/creating-a-permanent-link-to-a-code-snippet#linking-to-code) on GitHub to refer to and display code snippets in issues
+- Coding in the cloud with GitHub [Codespaces](https://github.com/features/codespaces) and VS Code: type `.` in a repository to jump into the editor
+- One can create empty commits, i.e. a commit without any changes, using the `--allow-empty` options. This can be useful for debugging, for example. The full command could look like this: `git commit --allow-empty -m 'This commit is empty'`
+- You can generate a list of contributors sorted by the number of contributions using `git shortlog --summary --numbered --email.
+- If you have some contributors with several different email addresse and/or configured names, you can merge them via aliases in a file called [`.mailmap`](https://git-scm.com/docs/gitmailmap) that should reside in the root of the repository.
 
 ## Merge vs. rebase
 
 | Duration | Format | Material |
 | --- | --- | --- |
-| 15 minutes | slides | TODO |
+| 15 minutes | slides | [`workflow_slides.md`](https://github.com/Simulation-Software-Engineering/Lecture-Material/blob/main/version-control/material/merge_rebase_slides.md) |
+
+## Working in teams / git workflows
+
+| Duration | Format | Material |
+| --- | --- | --- |
+| 15 minutes | slides | [`workflow_slides.md`](https://github.com/Simulation-Software-Engineering/Lecture-Material/blob/main/version-control/material/workflow_slides.md) |
 
 ## GitHub/GitLab standards
 
-| Duration | Format |
-| --- | --- |
-| 10 minutes | slides, demo |
-
-TODO
-
-- README.md
-- license
-- CONTRIBUTING.md
-- issue or PR templates
-- closes #34
+| Duration | Format | Material |
+| --- | --- | --- |
+| 10 minutes | slides, demo | [`standards_slides.md`](https://github.com/Simulation-Software-Engineering/Lecture-Material/blob/main/version-control/material/standards_slides.md) |
 
 ## Exercise: SSE Git cheat sheet
 
-Duration: 75 mins
-Format: group work (~10-15 students, if more we might need to split)
-Prerequisites: everybody needs a GitHub account, everybody needs to have write access to the master branch
-Material: TODO
+| Duration | Format | Material |
+| --- | --- | --- |
+| 75 minutes | group work | [`cheat_sheet_text.md`](https://github.com/Simulation-Software-Engineering/Lecture-Material/blob/main/version-control/material/cheat_sheet_text.md) |
 
 ## Further reading
 
